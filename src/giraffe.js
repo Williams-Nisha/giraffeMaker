@@ -4,6 +4,7 @@ var giraffeMaker = function(name, height, tired) {
   newGiraffe.height = height;
   newGiraffe.hunger = 10;   
   newGiraffe.tired = tired;
+  newGiraffe.sing = "lalala";
 
   newGiraffe.isTallEnough = function(treeHeight) {
     return newGiraffe.height > treeHeight;
