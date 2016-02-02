@@ -1,8 +1,9 @@
-var giraffeMaker = function(name, height) {
+var giraffeMaker = function(name, height, tired) {
   var newGiraffe = {};
   newGiraffe.name = name;
   newGiraffe.height = height;
-  newGiraffe.hunger = 10;
+  newGiraffe.hunger = 10;   
+  newGiraffe.tired = tired;
 
   newGiraffe.isTallEnough = function(treeHeight) {
     return newGiraffe.height > treeHeight;
@@ -11,6 +12,17 @@ var giraffeMaker = function(name, height) {
   newGiraffe.isHungry = function() {
     return newGiraffe.hunger > 0;
   };
+    
+  newGiraffe.isSleepy = function() {
+      if newGiraffe.tired === 'sleepy' || newGiraffe.tired === 'exhausted' {
+          var message = newGiraffe.name + ", You look tired! Time for a nap.";
+      } else if (newGiraffe.tired === 'awake'){
+          var message = newGiraffe.name + ", You have so much energy! Don't stop now.";
+      } else {
+        var message = newGiraffe.name + ", How do you feel? Maybe you should have a nap."; 
+      }
+        return message;
+  }
 
   newGiraffe.say = function(option) {
     var sentences = {
